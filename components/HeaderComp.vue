@@ -12,15 +12,15 @@
             <img class="bg" src="@/assets/hero-bottom.png" alt="">
             <div class="row">
                 <div class="col">
-                    <div class="value">$ 1000,000</div>
+                    <div class="value">$ {{totalTokens}}</div>
                     <p class="title">Total value of tokens is locked</p>
                 </div>
                 <div class="col">
-                    <div class="value">1,000</div>
+                    <div class="value">{{projects}}</div>
                     <p class="title">Projects Locked</p>
                 </div>
                 <div class="col">
-                    <div class="value">$ 1,000,000</div>
+                    <div class="value">$ {{totalLiquidity}}</div>
                     <p class="title">Total value of liquidity is locked.</p>
                 </div>
             </div>
@@ -31,7 +31,81 @@
 
 <script>
 export default {
-   
+    data(){
+        return{
+            tokensValue: 1000000,
+            projectsLocked: 1000,
+            totalLiquidity: 100000000
+        }
+    },
+    computed:{
+        totalTokens(){
+            let str = this.tokensValue.toString()
+            if(str.length>3){
+                str =str.split('').reverse()
+                let temp= ''
+                let j=0;
+                for(let i=0; i<str.length; i++){
+                    if(j==3){
+                        temp += ',';  
+                        j=0
+                    }
+                    temp += str[i];  
+                    j++;
+                }
+                let finalStr=''
+                for(let k=temp.length-1; k>=0; k--){
+                    finalStr += temp[k]
+                }
+                str = finalStr
+            }
+            return str
+        },
+        projects(){
+            let str = this.projectsLocked.toString()
+            if(str.length>3){
+                str =str.split('').reverse()
+                let temp= ''
+                let j=0;
+                for(let i=0; i<str.length; i++){
+                    if(j==3){
+                        temp += ',';  
+                        j=0
+                    }
+                    temp += str[i];  
+                    j++;
+                }
+                let finalStr=''
+                for(let k=temp.length-1; k>=0; k--){
+                    finalStr += temp[k]
+                }
+                str = finalStr
+            }
+            return str
+        },
+        totalLiquidity(){
+            let str = this.totalLiquidity.toString()
+            if(str.length>3){
+                str =str.split('').reverse()
+                let temp= ''
+                let j=0;
+                for(let i=0; i<str.length; i++){
+                    if(j==3){
+                        temp += ',';  
+                        j=0
+                    }
+                    temp += str[i];  
+                    j++;
+                }
+                let finalStr=''
+                for(let k=temp.length-1; k>=0; k--){
+                    finalStr += temp[k]
+                }
+                str = finalStr
+            }
+            return str
+        },
+    },
 
 }
 </script>
@@ -44,11 +118,16 @@ export default {
     justify-content: flex-start;
     align-items: flex-start;
     padding: 0;
+    -webkit-perspective: 240px;
+    perspective: 240px;
+    overflow: hidden;
     .hero{
         position: absolute;
         right: 0;
         bottom: 0;
         width: 1200px;
+        -webkit-animation: moveHeroImage 15s infinite ease-in-out alternate;
+        animation: moveHeroImage 15s infinite ease-in-out alternate;
 
         @media only screen and (max-width:1480px){
             width: 980px;
@@ -61,6 +140,21 @@ export default {
             bottom: 50px;
         }
         @media only screen and (max-width:580px){
+        }
+        @keyframes moveHeroImage {
+        0% {
+            transform-origin: center;
+            -webkit-transform: rotateZ(0deg) rotateY(0deg);
+            opacity: .8;
+        }
+        50% {
+            -webkit-transform: rotateZ(3deg) rotateY(3deg);
+            opacity: .3;
+        }
+        100% {
+            -webkit-transform: rotateZ(0deg) rotateY(0deg);
+            opacity: .8;
+        }
         }
     }
     .content{
