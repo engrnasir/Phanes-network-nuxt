@@ -20,7 +20,7 @@
                     <p class="title">Projects Locked</p>
                 </div>
                 <div class="col">
-                    <div class="value">$ {{totalLiquidity}}</div>
+                    <div class="value">$ {{getTotalLiquidity}}</div>
                     <p class="title">Total value of liquidity is locked.</p>
                 </div>
             </div>
@@ -83,7 +83,7 @@ export default {
             }
             return str
         },
-        totalLiquidity(){
+        getTotalLiquidity(){
             let str = this.totalLiquidity.toString()
             if(str.length>3){
                 str =str.split('').reverse()

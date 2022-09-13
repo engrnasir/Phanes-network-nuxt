@@ -1,13 +1,15 @@
 <template>
-  <div id="governance">
-    <h2 class="heading">Governed by the community</h2>
-    <p class="snippet">Phanes is a fully decentralized, community governed protocol with 120,121 token holders.</p>
-    <button class="governance-btn">Governance</button>
-  </div>
-  <div class="faas-saas">
-    <img src="@/assets/faasbg.png" class="bg" alt="">
-    <h2 class="heading">Interested in deploying a FAAS/SAAS </h2>
-    <p class="snippet">Submit a proposal to deploy a new project on the Phanes staking platform. </p>
+  <div class="wrapper">
+    <div id="governance">
+      <h2 class="heading">Governed by the community</h2>
+      <p class="snippet">Phanes is a fully decentralized, community governed protocol with 120,121 token holders.</p>
+      <button class="governance-btn">Governance</button>
+    </div>
+    <div class="faas-saas">
+      <img src="@/assets/faasbg.png" class="bg" alt="">
+      <h2 class="heading">Interested in deploying a FAAS/SAAS </h2>
+      <p class="snippet">Submit a proposal to deploy a new project on the Phanes staking platform. </p>
+    </div>
   </div>
 </template>
 

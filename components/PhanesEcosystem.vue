@@ -3,7 +3,6 @@
     <h2 class="heading">Phanes Ecosystem</h2>
     <div class="cards">
         <div class="card" v-for="(card, index) in cards" :key="index">
-            <!-- <img :src="require(`~assets/${card.img}`)" alt="" class="icon"> -->
             <img src="@/assets/bag.png" v-if="index==0" alt="" class="icon">
             <img src="@/assets/cloud_db.png" v-if="index==1" alt="" class="icon">
             <img src="@/assets/locker.png" v-if="index==2" alt="" class="icon">
@@ -20,7 +19,7 @@
   </div>
 </template>
 
-<script>
+<script>    
 export default {
     data(){
         return{
@@ -42,8 +41,11 @@ export default {
                 return card.snippet.substring(0,125)+'...'
             }
             return card.snippet
-
+        },
+        getUrl(img){
+            return require(`@/assets/${img}.png`)
         }
+
     }
    
 }

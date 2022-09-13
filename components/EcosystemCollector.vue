@@ -5,11 +5,30 @@
           <p class="collectors">$ {{totalCollection}}</p>
           <p class="snippet">The Phane treasury focuses on ecosystem growth and earns fees from transactions, staking, and farming. All earned fees are distributed as follows.</p>
           <table cellspacing="15">
-              <tr><td class="sub-title">Liquidity</td><td class="value">{{liquidity}}%</td></tr>
-              <tr><td class="sub-title">Marketing</td><td class="value">{{marketing}}%</td></tr>
-              <tr><td class="sub-title">Developments</td><td class="value">{{developments}}%</td></tr>
-              <tr><td class="sub-title">Reserve</td><td class="value">{{reserve}}%</td></tr>
-              <tr><td class="sub-title">Bounty</td><td class="value">{{bounty}}%</td></tr>
+            <thead></thead>
+            <tbody>
+                <tr>
+                  <td class="sub-title">Liquidity</td>
+                  <td class="value">{{liquidity}}%</td>
+                </tr>
+                <tr>
+                  <td class="sub-title">Marketing</td>
+                  <td class="value">{{marketing}}%</td>
+                </tr>
+                <tr>
+                  <td class="sub-title">Developments</td>
+                  <td class="value">{{developments}}%</td>
+                </tr>
+                <tr>
+                  <td class="sub-title">Reserve</td>
+                  <td class="value">{{reserve}}%</td>
+                </tr>
+                <tr>
+                  <td class="sub-title">Bounty</td>
+                  <td class="value">{{bounty}}%</td>
+                </tr>
+            </tbody>
+            <tfoot></tfoot>
           </table>
       </div>
       <div class="right-content">
@@ -18,8 +37,10 @@
               <p class="value">$ {{phanesCommunityTreasure}}</p>
           </div>
           <table cellspacing="15">
-              <tr><td class="sub-title">Phane</td> <td class="value">{{phane}}%</td></tr>
-              <tr><td class="sub-title">USDC</td> <td class="value">{{usdc}}%</td></tr>
+            <tbody>
+                <tr><td class="sub-title">Phane</td> <td class="value">{{phane}}%</td></tr>
+                <tr><td class="sub-title">USDC</td> <td class="value">{{usdc}}%</td></tr>
+            </tbody>
           </table>
       </div>
     </div>
@@ -38,7 +59,6 @@
               phanesTreasure: 174412655,
               phane: 75.8,
               usdc: 10.6
-  
           }
       },
       computed:{
